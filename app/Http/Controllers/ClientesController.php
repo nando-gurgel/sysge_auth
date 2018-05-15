@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Clientes;
+use App\Tarifas;
 use App\Veiculos;
 
 class ClientesController extends Controller
@@ -45,7 +46,7 @@ class ClientesController extends Controller
   public function store(Request $request)
   {
 
-    $this->validate($request,[
+    request()->validate([
       'nome'          => 'required',
       'cpf'           => 'required',
       'telefone'      => 'required',
@@ -63,9 +64,8 @@ class ClientesController extends Controller
       return redirect()
           ->route('clientes.index')
           ->with('success','Cadastro criado com sucesso');
+
   }
-
-
   /**
    * Display the specified resource.
    *

@@ -36,9 +36,9 @@ class VeiculosController extends Controller
    */
   public function create()
   {
-	  
+
 		$tipos = $this->tipos;
-	  
+
       return view('veiculos.create',compact('tipos'));
   }
 
@@ -92,9 +92,9 @@ class VeiculosController extends Controller
    */
   public function edit($id)
   {
-	  
+
 	   $tipos = $this->tipos;
-	  
+
       $veiculo = Veiculos::find($id);
       return view('veiculos.edit',compact('veiculo','tipos'));
   }
@@ -117,7 +117,7 @@ class VeiculosController extends Controller
       ]);
 
       Veiculos::find($id)->update($request->all());
-	  
+
       return redirect()->route('veiculos.index')
           ->with('success','Cadastro atualizado com sucesso');
   }
