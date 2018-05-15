@@ -21,3 +21,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('clientes','ClientesController')->middleware('auth');
 Route::resource('veiculos','VeiculosController')->middleware('auth');
+Route::resource('entrada','EntradasController')->middleware('auth');
+Route::resource('usuarios','UsuariosController')->middleware('auth');
